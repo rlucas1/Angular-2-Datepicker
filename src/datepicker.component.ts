@@ -1,10 +1,10 @@
 import {
-  animate, Component, ElementRef, EventEmitter, Input, keyframes, OnChanges,
-  OnInit, Output, Renderer, SimpleChange, state, style, transition, trigger
+    animate, Component, ElementRef, EventEmitter, Input, keyframes, OnChanges, OnInit, Output, Renderer, SimpleChange,
+    style, transition, trigger
 } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 
-import { Calendar } from './calendar';
+import {Calendar} from './calendar';
 import * as moment from 'moment';
 
 interface DateFormatFunction {
@@ -344,7 +344,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
   // time
   @Input() calendarDays: Array<number>;
   @Input() currentMonth: string;
-  @Input() dayNames: Array<String> = ['S', 'M', 'T', 'W', 'T', 'F', 'S']; // Default order: firstDayOfTheWeek = 0
+  @Input() dayNames: Array<String>;
   @Input() hoveredDay: Date;
   @Input() months: Array<string>;
   dayNamesOrdered: Array<String>;
@@ -373,14 +373,15 @@ export class DatepickerComponent implements OnInit, OnChanges {
       'white': '#ffffff'
     };
     this.accentColor = this.colors['blue'];
+      this.dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S']; // Default order: firstDayOfTheWeek = 0
+      this.months = [
+          'January', 'February', 'March', 'April', 'May', 'June', 'July',
+          'August', 'September', 'October', 'November', ' December'
+      ];
     this.altInputStyle = false;
     // time
     this.updateDayNames();
 
-    this.months = [
-      'January', 'February', 'March', 'April', 'May', 'June', 'July',
-      'August', 'September', 'October', 'November', ' December'
-    ];
     // listeners
     this.clickListener = renderer.listenGlobal(
       'document',

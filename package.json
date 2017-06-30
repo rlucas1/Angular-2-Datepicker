@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "author": "Kevin O'Leary",
   "license": "MIT",
+  "contributors": [
+    "Romain LUCAS"
+  ],
   "keywords": [
     "angular2",
     "angular 2",
@@ -40,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/koleary94/Angular-2-Datepicker"
+    "url": "https://github.com/rlucas1/Angular-2-Datepicker"
   },
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
