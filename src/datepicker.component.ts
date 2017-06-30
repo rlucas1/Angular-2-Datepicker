@@ -300,7 +300,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
   calendar: Calendar;
   currentMonthNumber: number;
   currentYear: number;
-  months: Array<string>;
+  @Input() months: Array<string>;
   // animation
   animate: string;
   // colors
